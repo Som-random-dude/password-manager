@@ -485,3 +485,80 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  /* Password Generator Section */
+.passwordGenerator {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  margin: 0 auto 2rem auto;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.passwordGenerator .section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.passwordGenerator .section-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background: var(--accent);
+  margin-right: 0.8rem;
+  border-radius: 2px;
+}
+
+.passwordGenerator .input-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.passwordGenerator input {
+  width: 60%;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  outline: none;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.passwordGenerator input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.3);
+}
+
+.passwordGenerator button {
+  padding: 0.9rem 2rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.passwordGenerator button:hover {
+  background: var(--accent-light);
+  box-shadow: 0 4px 12px rgba(124, 77, 255, 0.3);
+}
