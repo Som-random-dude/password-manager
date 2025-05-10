@@ -122,3 +122,13 @@ window.addEventListener('click', (e) => {
     mainpopup.style.display = "none";
   }
 });
+
+function sterngthCheck(){
+alert('hello')
+}
+
+
+function generate(){
+  const input = document.getElementsByClassName('.strength-input');
+  
+}
