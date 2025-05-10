@@ -1,0 +1,260 @@
+
+*{
+ font-family: sans-serif;
+ margin: 0;
+ padding: 0;
+ 
+}
+
+ a{
+    text-decoration: none;
+ }
+
+:root {
+    --divColor: #dcd8fb; 
+    --bgColor: #cbc7f1;
+    --textColour: #4d558f ;
+    --btnColour: #1165ec;
+    --sidebarColor: #d2cef5;
+    --sidebarLength : 50px;
+    --siderbarWidth : 220px;
+}
+
+body{
+    background-color: var(--bgColor);
+}
+
+.sidebar {
+    background-color: var(--sidebarColor);
+    height: 100dvh;
+    width: var(--siderbarWidth);
+    z-index: 1000;
+    align-items: center;
+    position: absolute;
+    left: -100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.visible {
+    left: 0; 
+}
+
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    
+}
+
+.userName {
+    color: var(--textColour);
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+
+
+.starImg {
+    height: 1rem;
+    border-radius: 1em;
+    margin-left: 4px;
+    transition: 0.3s;
+    
+}
+
+.sidebarMainList{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidebarList {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.sidebarImg {
+    height: 1.5em;
+}
+
+.sidebarText {
+    color: var(--textColour);
+    margin: 0 0 0 7px;
+    cursor: pointer;
+}
+
+
+.userImg {
+    height: 3rem;
+    border-radius: 2em;
+    margin-left: 20px;
+    
+}
+
+.sidebarToggle {
+    
+    height: 2em;
+    cursor: pointer;
+    
+}
+
+.toggle{
+    color: var(--textColour);
+    font-weight: bold;
+}
+
+
+
+.searchDivDiv{
+    background-color: var(--divColor);
+    position: relative;
+    padding: 0.7em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.searchDiv {
+    
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    display: inline;
+    padding: 3px 8px;
+    border-radius: 5em;
+    margin-left: 30px;
+}
+
+.searchImg {
+    height: 1em;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.searchInput {
+    outline: none;
+    padding: 0.7em 25em 0.7em 2em;
+    border: none;
+}
+
+.history,
+.statistics{
+    color: var(--textColour);
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.theme{
+    height: 2em;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logoAndText {
+    display: flex;
+    align-items: center;
+}
+
+.logoImg {
+    height: 2.3em;
+    border-radius: 2em;
+}
+.webName{
+    color: var(--textColour);
+    margin: 0 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.passwordDiv {
+    background-color: var(--divColor);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    flex-direction: column;
+    padding: 25px;
+    margin: 20px auto;
+
+}
+
+.passwordDivTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20 auto;
+    gap: 180px;
+}
+
+.passwordDivTopText{
+     display: flex;
+    flex-direction:column ;
+    align-items: center; 
+    color: var(--textColour);
+    font-size: 30px;
+    font-weight: bold;
+    gap: 20px;
+
+}
+
+.passowrdGenerator{
+    background-color: var(--bgColor);
+    padding: 2em;
+    
+}
+
+.iconsText {
+    color: var(--textColour);
+    font-size: 30px;
+    margin: 0px 0 10px 50px;
+}
+
+.iconsDiv {
+   
+    padding: 20px;
+    background-color: var(--divColor);
+    margin: 30px auto ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.iconsDivFirst
+{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    gap: 16em;
+    margin: 20px ;
+}
+
+.iconsDivSecond{
+    gap: 16em;
+    margin: 20px ;
+    display: flex;
+    flex-direction: row-reverse; 
+    justify-content: flex-end; 
+
+    overflow-x: auto;
+}
+
+.iconImages{
+    width: 80px;
+    cursor: pointer;
+    
+}
+.addedIconImages{
+    width: 80px;
+    cursor: pointer;
+   
+}
+
+
