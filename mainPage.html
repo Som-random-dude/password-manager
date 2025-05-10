@@ -1,156 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PasswordPal</title>
-    <link rel="stylesheet" href="mainpage.css">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="mainpage.css" />
+  </head>
+  <body>
     <nav class="sidebar">
-        <div class="userInfo">
-            <img src="images/blacka.jpg" alt="" class="userImg">
-            <p class="userName"> Ayush dahal</p>
-            <img src="images/star.png" alt="" class="starImg">
-        </div>
-        <div class="listDiv">
+      <div class="userInfo">
+        <img src="images/blacka.jpg" alt="User" class="userImg" />
+        <p class="userName">Ayush Dahal</p>
+        <div class="starBadge"><i class="fas fa-star"></i></div>
+      </div>
+      <div class="listDiv">
         <ul class="sidebarMainList">
+          <a href="#">
+            <li class="sidebarList active">
+              <i class="fas fa-th-large sidebarIcon"></i>
+              <p class="sidebarText">Dashboard</p>
+            </li>
+          </a>
 
-                <a href="#">
-                    <li class="sidebarList">
-                        <img src="images/dashboard.png" alt="" class="sidebarImg">
-                        <p class="sidebarText">Dashboard</p>
-                    </li>
-                </a>
+          <a href="#">
+            <li class="sidebarList">
+              <i class="fas fa-key sidebarIcon"></i>
+              <p class="sidebarText">Passwords</p>
+            </li>
+          </a>
 
-                <a href="#">
-                    <li class="sidebarList">
-                        <img src="images/password.png" alt="" class="sidebarImg">
-                        <p class="sidebarText">passwords</p>
-                    </li>
-                </a>
+          <a href="#">
+            <li class="sidebarList">
+              <i class="fas fa-heart sidebarIcon"></i>
+              <p class="sidebarText">Favorite</p>
+            </li>
+          </a>
 
-                <a href="#"><li class="sidebarList">
-                    <img src="images/favorite.png" alt="" class="sidebarImg">
-                    <p class="sidebarText">favorite</p>
-                </li>
-                </a>
-
-                <a href="#">
-                    <li class="sidebarList">
-                        <img src="images/security.png" alt="" class="sidebarImg">
-                        <p class="sidebarText">security center</p>
-                    </li>
-                </a>
-
-                <a href="#">
-                    <li class="sidebarList">
-                        <img src="images/setting.png" alt="" class="sidebarImg">
-                        <p class="sidebarText">settings</p>
-                    </li>
-                </a>
-
-                <li class="sidebarList">
-                    <img src="images/sidebar.png" alt="" class="sidebarToggle" onclick="sidebarToggle()">
-                    
-                </li>
-
+          <a href="#">
+            <li class="sidebarList">
+              <i class="fas fa-shield-alt sidebarIcon"></i>
+              <p class="sidebarText">Security Center</p>
+            </li>
+          </a>
         </ul>
-        </div>
+      </div>
     </nav>
     
-     <div class="nonSidebar">
-        
-        <div class="searchDivDiv">
-
-            <div style="display: flex; align-items: center; ">
-                <img src="images/sidebar.png" alt="" class="sidebarToggle" onclick="sidebarToggle()">
-                <p class="toggle">SB</p>
-            </div>
-
-            <div class="searchDiv">
-                <img src="images/search.png" alt="" class="searchImg" >
-                <input type="" class="searchInput" placeholder="Search..........">
-                
-            </div>
-
-            <div >
-                <p class="history">History</p>
-            </div>
-
-            <div>
-                <p class="statistics">
-                    Statistics
-                </p>
-            </div>
-
-            <div>
-                <img src="images/lightmode.png" alt="" class="theme" onclick="theme()">
-            </div>
-
-            <div class="logoAndText">
-                <p class="webName">
-                    PasswordPal
-                </p>
-                <img src="images/pp.jpg" alt="" class="logoImg">
-            </div>
-
-        </div>
-        
-        <div class="passwordDiv">
-
-            <div class="passwordDivTop">
-                <div class="passwordDivTopText">
-                    <p class="passwordText">No of passwords</p>
-                    <p class="passwordText">0</p>
-                </div>
-                <div class="passwordDivTopText">
-                    <p class="passwordText">No of sites </p>
-                    <p class="passwordText">0</p>
-                </div>
-                <div class="passwordDivTopText">
-                    <p class="passwordText">last updated on</p>
-                    <p class="passwordText"> 0000 AD</p>
-                </div>
-            </div>
-
-        <div class="passowrdGenerator">
-            
-        </div>    
-
+    <div class="nonSidebar">
+      <div class="topBar">
+        <div class="menuToggle">
+          <i class="fas fa-bars"></i>
         </div>
 
-        <div class="iconsDiv">
-            <p class="iconsText">
-                Quick select :
-            </p>
-            
-            <div class="iconsDivFirst">
-                <img src="images/facebook.png" class="iconImages">
-                <img src="images/gmail.png" class="iconImages">
-                <img src="images/online banking.png" class="iconImages">
-                <img src="images/crypto.png" class="iconImages">
-            </div>
-            <div class="iconsDivSecond">
-
-                <img src="images/plus2.png"  class="iconImages" onclick="addIcons()">
-            </div>
-            
+        <div class="searchDiv">
+          <i class="fas fa-search searchIcon"></i>
+          <input type="text" class="searchInput" placeholder="Search..." />
         </div>
 
-        <input type="text" class="input">
-       
-        
+        <div class="topBarLinks">
+          <a href="#" class="topBarLink">History</a>
+          <a href="#" class="topBarLink">Statistics</a>
+        </div>
 
+        <div class="themeToggle" onclick="theme()">
+          <i class="fas fa-moon"></i>
+        </div>
 
- 
+        <div class="logoAndText">
+          <p class="webName">PasswordPal</p>
+          <div class="logoImg"></div>
+        </div>
+      </div>
 
-     </div>
+      <div class="passwordDiv glassCard">
+        <div class="passwordDivTop">
+          <div class="passwordStat">
+            <p class="passwordLabel">No of passwords</p>
+            <p class="passwordValue">0</p>
+          </div>
+          <div class="passwordStat">
+            <p class="passwordLabel">No of sites</p>
+            <p class="passwordValue">0</p>
+          </div>
+          <div class="passwordStat">
+            <p class="passwordLabel">Last updated</p>
+            <p class="passwordValue">0000 AD</p>
+          </div>
+        </div>
 
+        <div class="passwordGenerator"></div>
+      </div>
 
+      <div class="quickAccessDiv glassCard">
+        <p class="sectionTitle">Quick Select</p>
 
+        <div class="quickAccessGrid">
+          <div class="quickAccessItem">
+            <div class="quickAccessIcon facebook">
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <p class="quickAccessName">Facebook</p>
+          </div>
+          
+          <div class="quickAccessItem">
+            <div class="quickAccessIcon gmail">
+              <i class="fab fa-google"></i>
+            </div>
+            <p class="quickAccessName">Gmail</p>
+          </div>
+          
+          <div class="quickAccessItem">
+            <div class="quickAccessIcon bank">
+              <i class="fas fa-university"></i>
+            </div>
+            <p class="quickAccessName">Bank</p>
+          </div>
+          
+          <div class="quickAccessItem">
+            <div class="quickAccessIcon crypto">
+              <i class="fab fa-bitcoin"></i>
+            </div>
+            <p class="quickAccessName">Crypto</p>
+          </div>
+          
+          <div class="quickAccessItem addNew" id="popupimage">
+            <div class="quickAccessIcon add">
+              <i class="fas fa-plus"></i>
+            </div>
+            <p class="quickAccessName">Add New</p>
+          </div>
+        </div>
+      </div>
 
+      <div id="main_popupbox" class="popupOverlay">
+        <div class="popupContent glassCard">
+          <span id="closepopup" class="popupClose">&times;</span>
+          <h3>Add New Service</h3>
+          <input class="popupInput" id="INPUTT" type="text" placeholder="Enter website name..." />
+          <button id="popupbtn" class="popupButton" onclick="addIcons(); clearinput()">
+            <i class="fas fa-plus"></i> Add
+          </button>
+        </div>
+      </div>
+    </div>
 
-     <script src="mainpage.js"></script>
-</body>
+    <script src="mainpage.js"></script>
+  </body>
 </html>
