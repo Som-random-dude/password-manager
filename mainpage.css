@@ -562,3 +562,9 @@
   background: var(--accent-light);
   box-shadow: 0 4px 12px rgba(124, 77, 255, 0.3);
 }
+
+.strength-text{
+  color: var(--text-primary);
+  font-size: 1.2em;
+  font-weight: bold;
+}
