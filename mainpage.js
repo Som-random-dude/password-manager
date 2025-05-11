@@ -124,11 +124,70 @@ window.addEventListener('click', (e) => {
 });
 
 function sterngthCheck(){
-alert('hello')
+const data = document.getElementsByClassName('check-input')[0].value;
+let point = 0;
+  if (data.length<6){
+    point += 0;
+  }
+  if (data.length>6 && data.length <9){
+    point += 30;
+  }
+  if (data.length>8 && data.length <13)
+  {
+    point += 60 
+  }
+  if (data.length>12 && data.length <17){
+    point += 90 
+  }
+  if (data.length > 16 ){
+    point += 100
+  }
+
+  if (/[A-Z]/.test(data)) {point += 25;   }   
+  if (/[a-z]/.test(data)) {point += 10;    }  
+  if (/[0-9]/.test(data)) {point += 25;   } 
+  if (/[^A-Za-z0-9]/.test(data)) { point += 40;} 
+  point = point/200*100;
+  let text = document.getElementsByClassName('strength-text')[0];
+  text.innerHTML = `The strenght of this password gets ${point}%. `;  
 }
 
 
 function generate(){
-  const input = document.getElementsByClassName('.strength-input');
-  
+  const input = document.getElementsByClassName('strength-input')[0];
+  const alphabet = [
+  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+  'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+];
+  const numbers = ['0','1','2','3','4','5','6','7','8','9'];
+  const specialChars = [
+  '!', '@', '#', '$', '%', '^', '&', '*', 
+  ':', ';', '<', '>', ',', '.', '?', '/', '~', '`'
+];
+  let password = [];
+    let n = 0;
+    let c = 0;
+
+    while(c!= 16){
+      n = Math.floor(Math.random()*3)
+      if (n == 0 ){
+        n = Math.floor(Math.random()*alphabet.length);
+        password.push(alphabet[n])
+        c++;
+      }
+      if ( n == 1){
+        n = Math.floor(Math.random()*numbers.length);
+        password.push(numbers[n])
+        c++;
+      }
+      if (n == 2 ){
+        n = Math.floor(Math.random()*specialChars.length);
+        password.push(specialChars[n])
+        c++;
+      }
+
+    }
+    input.value = password.join('');
 }
