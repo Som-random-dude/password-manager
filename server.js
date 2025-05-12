@@ -4,7 +4,7 @@ const app = express();
 const PORT = 3000;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const User = require('./modals/user'); // Make sure the path to your user model is correct
+const User = require('./public/modals/user'); // Make sure the path to your user model is correct
 
 // Mongoose connection (Updated Code)
 mongoose.connect("mongodb+srv://aamosh65:PasswordPal@passwordpal.bh0qtjv.mongodb.net/PasswordPal?retryWrites=true&w=majority&appName=PasswordPal", {
