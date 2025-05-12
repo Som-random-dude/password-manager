@@ -8,6 +8,7 @@
   --card-bg: rgba(30, 30, 30, 0.6);
   --card-border: rgba(255, 255, 255, 0.1);
   --success: #4caf50;
+  --error: #f44336; /* Added for consistency */
 }
 
 [data-theme="light"] {
@@ -499,6 +500,9 @@ body {
   .quickAccessGrid {
       grid-template-columns: repeat(3, 1fr);
   }
+  .popupContent { /* For password tools modal on small screens */
+    max-width: 95%;
+  }
 }
 
 /* Login Page Styles */
@@ -842,3 +846,231 @@ body {
   color: var(--accent-light);
   text-decoration: underline;
 }
+
+/* Password Tools Button (main page) */
+.passwordToolsBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  z-index: 500; /* Ensure it's above most content but below modals */
+  transition: all 0.3s;
+  box-shadow: 0 8px 32px rgba(124, 77, 255, 0.3);
+}
+
+.passwordToolsBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(124, 77, 255, 0.4);
+}
+
+.passwordToolsBtn i {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* Password Tools Modal Styling */
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-btn.active {
+  background: var(--accent);
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.3);
+}
+
+
+.copy-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1.1rem; /* Slightly larger for better tap area */
+  padding: 0.3rem;
+  transition: color 0.3s;
+}
+
+.copy-btn:hover {
+  color: var(--accent);
+}
+
+.action-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s, transform 0.2s; /* Removed box-shadow for minimal look */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.action-btn:hover {
+  background: var(--accent-light);
+  /* Removed box-shadow: 0 4px 12px rgba(124, 77, 255, 0.3); */
+  transform: translateY(-1px); /* Simple hover effect */
+}
+.action-btn:active {
+    transform: translateY(0px);
+}
+
+
+/* Circular Strength Visualizer */
+.strength-visualizer-container {
+  width: 100px;
+  height: 100px;
+  margin: 1.5rem auto; /* Centered and with margin */
+  position: relative;
+}
+
+.circular-chart {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1); /* Background circle color */
+  stroke-width: 3.8; /* Width of the background circle stroke */
+}
+
+.circle {
+  fill: none;
+  stroke-width: 3; /* Width of the progress circle stroke */
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.5s ease-in-out, stroke 0.5s ease-in-out; /* Smooth transitions */
+  stroke: var(--success); /* Default/max strength color */
+}
+
+.strength-percentage-text {
+  fill: var(--text-primary);
+  font-size: 0.8em; /* Adjusted for visibility within circle */
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: middle; /* Vertically centers text */
+  transition: fill 0.5s ease-in-out;
+}
+
+
+/* Strength Meter (Old - Kept for reference, but new circular one is used) */
+.strength-meter {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #ff5252, #ffeb3b, #4caf50);
+  transition: width 0.5s ease, background 0.5s ease;
+}
+
+.strength-text { /* Old text display style */
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center; /* Center old text if it were used */
+}
+
+.strength-text span {
+  font-weight: 600;
+}
+
+
+.before-after {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.password-box {
+  flex: 1;
+}
+
+.password-box label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.password-value {
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-family: monospace;
+  word-break: break-all;
+  min-height: 40px; /* Ensure it has some height even when empty */
+  border: 1px solid var(--card-border); /* Added border for consistency */
+}
+
+.password-value.original {
+  border-left: 3px solid #ff9800; /* Orange for original */
+}
+
+.password-value.improved {
+  border-left: 3px solid var(--success); /* Green for improved */
+}
+
+/* Add responsive styles as needed */
